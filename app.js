@@ -53,8 +53,14 @@ const posts = [
         tags: ["database", "backend", "mongoDB"]
     }
 ];
-
-    res.json(posts)
+    const tags = req.query.tags
+    console.log(tags)
+    let filtredPost = posts
+    if(tags){
+        filtredPost = posts.filter((post) => post.tags.includes(tags)
+        )
+    }
+    res.json(filtredPost)
 })
 
 
