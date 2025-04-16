@@ -13,7 +13,9 @@ app.get('/', (req, res) =>{
     res.send('Server del mio blog!')
 })
 
-//ARRAY
+//Bacheca route
+app.get('/bacheca', (req, res) =>{
+        //ARRAY
 const posts = [
     {
         titolo: "Benvenuto nel mio blog",
@@ -46,6 +48,9 @@ const posts = [
         tags: ["database", "backend", "mongoDB"]
     }
 ];
+
+    res.json(posts)
+})
 
 
 //Listening message
